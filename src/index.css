@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-page: #F7F6F2;
+    --bg-card: #FFFFFF;
+    --text-primary: #171717;
+    --text-secondary: #6B6B65;
+    --accent-warm: #D65A31;
+    --accent-olive: #8A9A5B;
+    --border-color: #E7E4DD;
+    --border-subtle: #EFECE6;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: rgba(214, 90, 49, 0.2);
+    color: #171717;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F7F6F2;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D8D4CA;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #D65A31;
+  }
+}
+
+.font-heading {
+  font-family: 'Space Grotesk', 'Manrope', sans-serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+}
+
+/* Engineering grid pattern */
+.bg-tech-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(23, 23, 23, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(23, 23, 23, 0.035) 1px, transparent 1px);
+}
+
+.bg-dot-pattern {
+  background-size: 24px 24px;
+  background-image: radial-gradient(rgba(23, 23, 23, 0.06) 1px, transparent 1px);
+}
