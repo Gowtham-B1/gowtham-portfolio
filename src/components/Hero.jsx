@@ -104,17 +104,17 @@ export default function Hero({ onOpenResume }) {
                 <ExternalLink className="w-3 h-3 text-[#6B6B65]" />
               </a>
 
-              {/* GitHub Placeholder */}
+              {/* GitHub */}
               <a 
                 href={personalInfo.github} 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 hover:text-[#D65A31] transition-colors"
-                title="GitHub Profile"
+                title="GitHub Profile (@Gowtham-B1)"
               >
                 <GithubIcon className="w-4 h-4 text-[#171717]" />
                 <span>GitHub</span>
-                <span className="text-[10px] px-1.5 py-0.5 bg-[#EFECE6] rounded-xs text-[#6B6B65]">dev</span>
+                <ExternalLink className="w-3 h-3 text-[#6B6B65]" />
               </a>
 
               {/* Email */}

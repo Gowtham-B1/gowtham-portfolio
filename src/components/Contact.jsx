@@ -8,7 +8,7 @@ import {
   MessageSquare, 
   ArrowUpRight
 } from 'lucide-react';
-import { LinkedinIcon } from './SocialIcons';
+import { LinkedinIcon, GithubIcon } from './SocialIcons';
 import { personalInfo } from '../data/portfolioData';
 
 export default function Contact() {
@@ -182,6 +182,27 @@ export default function Contact() {
                       className="text-xs sm:text-sm text-[#171717] font-medium hover:text-[#D65A31] transition-colors flex items-center gap-1.5"
                     >
                       linkedin.com/in/gowtham-b
+                      <ArrowUpRight className="w-3.5 h-3.5 text-[#6B6B65]" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              {/* GitHub Card */}
+              <div className="p-4 bg-[#FFFFFF] border border-[#E7E4DD] rounded-xs flex items-center justify-between group hover:border-[#171717] transition-all">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-xs bg-[#FAF9F5] border border-[#E7E4DD] flex items-center justify-center text-[#171717] shrink-0">
+                    <GithubIcon className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <span className="text-[10px] text-[#6B6B65] block">SOURCE REPOSITORY</span>
+                    <a 
+                      href={personalInfo.github} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-xs sm:text-sm text-[#171717] font-medium hover:text-[#D65A31] transition-colors flex items-center gap-1.5"
+                    >
+                      github.com/Gowtham-B1
                       <ArrowUpRight className="w-3.5 h-3.5 text-[#6B6B65]" />
                     </a>
                   </div>

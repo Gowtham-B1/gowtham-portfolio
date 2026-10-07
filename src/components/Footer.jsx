@@ -1,5 +1,5 @@
 import { ArrowUp, Mail, Phone } from 'lucide-react';
-import { LinkedinIcon } from './SocialIcons';
+import { LinkedinIcon, GithubIcon } from './SocialIcons';
 import { personalInfo } from '../data/portfolioData';
 
 export default function Footer() {
@@ -56,6 +56,15 @@ export default function Footer() {
               Direct Channels
             </div>
             <div className="flex flex-col space-y-2 text-xs font-mono-code text-[#6B6B65]">
+              <a 
+                href={personalInfo.github} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="flex items-center gap-1.5 hover:text-[#D65A31] transition-colors"
+              >
+                <GithubIcon className="w-3.5 h-3.5 text-[#171717]" />
+                <span>GitHub (@Gowtham-B1)</span>
+              </a>
               <a 
                 href={personalInfo.linkedin} 
                 target="_blank" 

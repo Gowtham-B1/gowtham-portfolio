@@ -7,7 +7,7 @@ export const personalInfo = {
   phone: "+91 6382528485",
   location: "Tamil Nadu, India",
   linkedin: "https://www.linkedin.com/in/gowtham-b-4172382a2",
-  github: "https://github.com/gowtham-b", // Clean placeholder
+  github: "https://github.com/Gowtham-B1",
   resumePdf: "/Gowtham_Resume_Current.pdf",
   summary:
     "Pursuing a Computer Science degree from K.L.N. College of Engineering, passionate about creating dynamic websites and mobile apps. Interested in building scalable applications and continuously improving technical knowledge in modern technologies, and actively working to improve technical abilities through hands-on projects.",
