@@ -1,15 +1,38 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   :root {
-    --bg-page: #F7F6F2;
+    --bg-page: #F0ECE1;
     --bg-card: #FFFFFF;
-    --text-primary: #171717;
-    --text-secondary: #6B6B65;
+    --bg-card-hover: #FAF8F5;
+    --text-primary: #12141A;
+    --text-secondary: #4E5463;
+    --text-muted: #7E8594;
     --accent-warm: #D65A31;
-    --accent-olive: #8A9A5B;
-    --border-color: #E7E4DD;
-    --border-subtle: #EFECE6;
+    --accent-warm-rgb: 214, 90, 49;
+    --accent-olive: #546E2A;
+    --border-color: #DDD8CB;
+    --border-subtle: #E8E4DA;
+    --spotlight-color: rgba(214, 90, 49, 0.14);
+    --grid-line-color: rgba(18, 20, 26, 0.07);
+  }
+
+  html.dark {
+    --bg-page: #08090D;
+    --bg-card: #12141F;
+    --bg-card-hover: #181C2B;
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+    --accent-warm: #FF5E3A;
+    --accent-warm-rgb: 255, 94, 58;
+    --accent-olive: #10B981;
+    --border-color: #24293D;
+    --border-subtle: #191D2C;
+    --spotlight-color: rgba(255, 94, 58, 0.18);
+    --grid-line-color: rgba(255, 255, 255, 0.045);
   }
 
   html {
@@ -17,6 +40,10 @@
     background-color: var(--bg-page);
     color: var(--text-primary);
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
   body {
@@ -25,46 +52,54 @@
     background-color: var(--bg-page);
     color: var(--text-primary);
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
   }
 
   ::selection {
-    background-color: rgba(214, 90, 49, 0.2);
-    color: #171717;
+    background-color: rgba(var(--accent-warm-rgb), 0.3);
+    color: var(--text-primary);
   }
 
   /* Custom scrollbar */
   ::-webkit-scrollbar {
-    width: 7px;
+    width: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: #F7F6F2;
+    background: var(--bg-page);
   }
   ::-webkit-scrollbar-thumb {
-    background: #D8D4CA;
+    background: var(--border-color);
     border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #D65A31;
+    background: var(--accent-warm);
   }
 }
 
 .font-heading {
-  font-family: 'Space Grotesk', 'Manrope', sans-serif;
+  font-family: 'Space Grotesk', 'Manrope', -apple-system, sans-serif;
 }
 
 .font-mono-code {
   font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
 }
 
-/* Engineering grid pattern */
+/* Engineering grid pattern that adapts to light/dark */
 .bg-tech-grid {
-  background-size: 32px 32px;
+  background-size: 36px 36px;
   background-image: 
-    linear-gradient(to right, rgba(23, 23, 23, 0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(23, 23, 23, 0.035) 1px, transparent 1px);
+    linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line-color) 1px, transparent 1px);
 }
 
 .bg-dot-pattern {
   background-size: 24px 24px;
-  background-image: radial-gradient(rgba(23, 23, 23, 0.06) 1px, transparent 1px);
+  background-image: radial-gradient(var(--grid-line-color) 1.5px, transparent 1.5px);
+}
+
+/* Crisp rendering helper to prevent subpixel text blur */
+.crisp-card {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
 }

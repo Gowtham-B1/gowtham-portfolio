@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { ThemeProvider } from './context/ThemeContext';
+import InteractiveBackground from './components/InteractiveBackground';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -17,51 +19,56 @@ export default function App() {
   const [isResumeOpen, setIsResumeOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#F7F6F2] text-[#171717] selection:bg-[#D65A31]/20 selection:text-[#171717] flex flex-col font-sans">
-      {/* Sticky Navigation */}
-      <Navbar onOpenResume={() => setIsResumeOpen(true)} />
+    <ThemeProvider>
+      <div className="min-h-screen bg-[#F0ECE1] dark:bg-[#08090D] text-[#12141A] dark:text-[#F8FAFC] selection:bg-[#D65A31]/25 dark:selection:bg-[#FF5E3A]/30 flex flex-col font-sans transition-colors duration-400 relative">
+        {/* Interactive Mouse-Reactive Background Spotlight & Grid */}
+        <InteractiveBackground />
 
-      {/* Main Portfolio Content */}
-      <main className="flex-1 w-full">
-        {/* Hero Section */}
-        <Hero onOpenResume={() => setIsResumeOpen(true)} />
+        {/* Sticky Navigation */}
+        <Navbar onOpenResume={() => setIsResumeOpen(true)} />
 
-        {/* 01 // Profile & Background */}
-        <About />
+        {/* Main Portfolio Content */}
+        <main className="flex-1 w-full relative z-10">
+          {/* Hero Section */}
+          <Hero onOpenResume={() => setIsResumeOpen(true)} />
 
-        {/* 02 // Technical Capabilities */}
-        <TechStack />
+          {/* 01 // Profile & Background */}
+          <About />
 
-        {/* 03 // Featured Work */}
-        <FeaturedProjects />
+          {/* 02 // Technical Capabilities */}
+          <TechStack />
 
-        {/* 04 // Professional Experience */}
-        <Experience />
+          {/* 03 // Featured Work */}
+          <FeaturedProjects />
 
-        {/* 05 // Research & Technical Papers */}
-        <Research />
+          {/* 04 // Professional Experience */}
+          <Experience />
 
-        {/* 06 // Honors & Recognitions */}
-        <Achievements />
+          {/* 05 // Research & Technical Papers */}
+          <Research />
 
-        {/* 07 // Verified Credentials */}
-        <Certifications />
+          {/* 06 // Honors & Recognitions */}
+          <Achievements />
 
-        {/* 08 // Education & Academic Foundation */}
-        <Education />
+          {/* 07 // Verified Credentials */}
+          <Certifications />
 
-        {/* 09 // Get In Touch & Contact */}
-        <Contact />
-      </main>
+          {/* 08 // Education & Academic Foundation */}
+          <Education />
 
-      {/* Footer */}
-      <Footer />
+          {/* 09 // Get In Touch & Contact */}
+          <Contact />
+        </main>
 
-      {/* Interactive Resume View & Download Modal */}
-      <ResumeModal 
-        isOpen={isResumeOpen} 
-        onClose={() => setIsResumeOpen(false)} 
-      />
-    </div>
+        {/* Footer */}
+        <Footer />
+
+        {/* Interactive Resume View & Download Modal */}
+        <ResumeModal 
+          isOpen={isResumeOpen} 
+          onClose={() => setIsResumeOpen(false)} 
+        />
+      </div>
+    </ThemeProvider>
   );
 }
