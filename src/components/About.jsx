@@ -82,14 +82,17 @@ export default function About() {
             variants={mechanicalLeft}
             className="lg:col-span-7 space-y-6 text-left"
           >
-            <div className="p-6 bg-[#FFFFFF] dark:bg-[#12141F] border border-[#DDD8CB] dark:border-[#24293D] rounded-sm shadow-sm dark:shadow-xl">
+            <TiltCard 
+              maxTilt={10}
+              className="p-6 bg-[#FFFFFF] dark:bg-[#12141F] border border-[#DDD8CB] dark:border-[#24293D] rounded-sm shadow-sm dark:shadow-xl hover:border-[#D65A31] dark:hover:border-[#FF5E3A]"
+            >
               <span className="text-xs font-mono-code uppercase tracking-wider text-[#4E5463] dark:text-[#94A3B8] block mb-2 font-bold">
                 Professional Summary
               </span>
               <p className="text-base sm:text-lg text-[#12141A] dark:text-[#F8FAFC] leading-relaxed font-normal">
                 "{personalInfo.summary}"
               </p>
-            </div>
+            </TiltCard>
 
             <div className="space-y-4 text-sm sm:text-base text-[#4E5463] dark:text-[#94A3B8] leading-relaxed">
               <p>
@@ -128,6 +131,7 @@ export default function About() {
           >
             {/* Academic Snapshot Card */}
             <TiltCard 
+              maxTilt={10}
               className="p-6 bg-[#FFFFFF] dark:bg-[#12141F] border border-[#DDD8CB] dark:border-[#24293D] rounded-sm shadow-sm dark:shadow-xl text-left group hover:border-[#D65A31] dark:hover:border-[#FF5E3A]"
             >
               <div className="flex items-center justify-between pb-4 mb-4 border-b border-[#DDD8CB] dark:border-[#24293D]">
@@ -174,6 +178,7 @@ export default function About() {
                 return (
                   <motion.div key={pillar.title} variants={mechanicalCard}>
                     <TiltCard 
+                      maxTilt={12}
                       className="p-4 bg-[#FFFFFF] dark:bg-[#12141F] border border-[#DDD8CB] dark:border-[#24293D] rounded-sm hover:border-[#D65A31] dark:hover:border-[#FF5E3A] transition-all group shadow-2xs h-full"
                     >
                       <div className="flex items-center justify-between mb-2">
